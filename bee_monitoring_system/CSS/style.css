@@ -1,0 +1,111 @@
+body{
+    background-color: #000000;
+}
+
+.custom-navbar {
+    background-color:#000000; /* Replace with your desired color */
+    height: 60px;
+    /*border-bottom: 1px solid #898989; */
+}
+
+.custom-font-logo {
+    font-size: 1.5rem;
+    font-style: normal;
+    color: #ffffff; /* 更改颜色 */
+    text-decoration: none; /* 移除下划线 */
+    align-items: center;
+    display: flex;
+    font-weight: bold;
+}
+
+.custom-font-logo:hover {
+    color: rgb(255, 255, 255); /* 悬停时的颜色 */
+    text-decoration: none; /* 保持移除下划线 */
+}
+
+.img-profile {
+    height:2.53rem;
+    width: 2.5rem;
+}
+
+.navbar-logo {
+    height: 2rem;
+    width: 2rem;
+    margin-right: 20px;
+}
+
+.small-card-update-time {
+    background-color: #f34c4c98;
+    border: 1px solid #000000;
+    box-shadow: 0 0px 0px #000000;
+    padding: 5px;
+    border-radius: 30px; 
+}
+
+.small-card-temperature {
+    background-color: rgba(252, 176, 77, 0.652);
+    border: 1px solid #000000;
+    box-shadow: 0 0px 0px #000000;
+    padding: 5px;
+    border-radius: 30px; 
+}
+
+.small-card-humidity {
+    background-color: rgba(0, 148, 254, 0.5);
+    border: 1px solid #000000;
+    box-shadow: 0 0px 0px #000000;
+    padding: 5px;
+    border-radius: 30px; 
+}
+
+.small-card-queen-bee-status {
+    background-color: rgba(14, 203, 220, 0.5);
+    border: 1px solid #000000;
+    box-shadow: 0 0px 0px #000000;
+    padding: 5px;
+    border-radius: 30px; 
+}
+
+.card {
+    background-color: #000000;
+    border: 1px solid #000000;
+    box-shadow: 0 0px 0px #000000;
+    padding: 10px;
+    border-radius: 30px; 
+}
+  
+.card-title {
+    color: #ffffff;
+    font-size: 1rem;
+}
+  
+.card-text {
+    color: #ffffff;
+    margin: 0px 0;
+}
+
+.small-text {
+    color: #ffffff; 
+    font-size: 1rem;
+    margin: 0px 0;
+}
+
+.chart-header-text {
+    color: #ffffff; 
+    font-size: 1.2rem;
+    margin: 0px 0;
+    align-items: center;
+    display: flex;
+}
+
+.card-header {
+    background-color: rgb(0, 0, 0); 
+    border-bottom: 0px solid #ccc; /* 添加 2px 灰色底線 */
+}
+
+.chart-icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 20px;
+    vertical-align: middle; /* 確保圖片和文字對齊 */
+}

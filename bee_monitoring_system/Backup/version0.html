@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <!--Chartjs CDN-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+
+    <!--Custome CSS-->
+    <link rel="stylesheet" href="./style.css">
+
+    <title>Home Page</title>
+  </head>
+  <body>
+    
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-ingo bg-info">
+      <div class="container"> 
+      <a class="navbar-brand text-white" href="#">KenInventry</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link text-white" href="#">Dashboard <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link text-white" href="#">Dashboard <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link text-white" href="profile.html">Admin Profile <span 
+                        class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--End Navbar-->
+
+    <!--Topside-->
+      <div class="container">
+        <div class="row mt-5">
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header bg-info text-white ">
+                Information
+              </div>
+              <div class="card-body">
+                <marquee behavior="" direction="">
+                  <h1 class="my-4">This is the Information</h1>
+                </marquee>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-2">
+            <div class="card">
+              <div class="card-header bg-info text-white">
+                Statistics
+              </div>
+              <div class="card-body">
+                <marquee behavior="" direction="">
+                  <h1 class="my-4">This is the Information</h1>
+                </marquee>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="card">
+              <div class="card-header bg-info text-white">
+                Statistics
+              </div>
+              <div class="card-body">
+                <marquee behavior="" direction="">
+                  <h1 class="my-4">This is the Information</h1>
+                </marquee>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div>
+              <canvas id="myLineChart"></canvas>
+            </div>
+            
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            
+            <script>
+              // Get the canvas element where the chart will be rendered
+              const ctx = document.getElementById('myLineChart').getContext('2d');
+
+              // Create a new line chart instance
+              const myLineChart = new Chart(ctx, {
+                  type: 'line', // Define the type of chart as 'line'
+                  data: {
+                      labels: ['January', 'February', 'March', 'April', 'May', 'June'], // X-axis labels
+                      datasets: [{
+                          label: 'Sales Data', // Name of the dataset
+                          data: [100, 150, 120, 180, 130, 170], // Y-axis data points
+                          borderColor: 'rgba(75, 192, 192, 1)', // Line color
+                          backgroundColor: 'rgba(75, 192, 192, 0.2)', // Fill color under the line
+                          borderWidth: 2, // Line thickness
+                          fill: true, // Fill the area under the line
+                      }]
+                  },
+                  options: {
+                      responsive: true, // Make chart responsive
+                      scales: {
+                          y: {
+                              beginAtZero: true // Ensure y-axis starts at 0
+                          }
+                      }
+                  }
+              });
+            </script>
+          </div>
+          </div>
+          
+        </div>
+      </div>
+    <!--End Topside-->
+    
+    <!--Graphs-->
+      <div class="container">
+        <div class="row my-5 ">
+          <div class="col-md-4">
+            <div>
+              <canvas id="myChart1"></canvas>
+            </div>
+            
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            
+            <script>
+              // Get the canvas element where the chart will be rendered
+              const ctx1 = document.getElementById('myChart1').getContext('2d');
+
+              // Create a new doughnut chart instance
+              const myDoughnutChart = new Chart(ctx1, {
+                  type: 'doughnut', // Define the type of chart as 'doughnut'
+                  data: {
+                      labels: ['Sales', 'Marketing', 'Development', 'Customer Support'], // Labels for each segment
+                      datasets: [{
+                          label: 'Department Budget',
+                          data: [300, 150, 100, 200], // Data representing the size of each segment
+                          backgroundColor: [
+                              'rgba(255, 99, 132, 0.2)', // Colors for each segment
+                              'rgba(54, 162, 235, 0.2)',
+                              'rgba(255, 206, 86, 0.2)',
+                              'rgba(75, 192, 192, 0.2)'
+                          ],
+                          borderColor: [
+                              'rgba(255, 99, 132, 1)',
+                              'rgba(54, 162, 235, 1)',
+                              'rgba(255, 206, 86, 1)',
+                              'rgba(75, 192, 192, 1)'
+                          ],
+                          borderWidth: 1 // Border thickness around each segment
+                      }]
+                  },
+                  options: {
+                      responsive: true, // Make the chart responsive
+                      plugins: {
+                          legend: {
+                              position: 'top', // Position of the legend
+                          }
+                      }
+                  }
+              });
+            </script>
+          </div>
+
+          <div class="col-md-8">
+            <div>
+              <canvas id="myChart2"></canvas>
+            </div>
+            
+            <script src="./tempLineCh.js"></script>
+          </div>
+        </div>
+      </div>
+
+    <!--End Graphs-->>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

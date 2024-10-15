@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display MongoDB Data</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>MongoDB Data</h1>
+
+    <!-- Table to display the data -->
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Box Number</th>
+                <th>Weight</th>
+                <th>Temperature</th>
+                <th>Humidity</th>
+                <th>Audio File ID</th>
+                <th>Prediction</th>
+                <th>Zero Predictions Count</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        fetch('http://localhost:5000/data')
+            .then(response => response.json())
+            .then(result => {
+                const data = result.data; // Access the 'data' array inside the result object
+
+                console.log('Fetched data:', data);  // This will print the fetched data in the console
+                
+                const tableBody = document.querySelector('#data-table tbody');
+                
+                data.forEach(item => {
+                    // Create a new row
+                    const row = document.createElement('tr');
+
+                    // Add each field to a cell in the row
+                    const dateCell = document.createElement('td');
+                    dateCell.textContent = item.Date;
+                    row.appendChild(dateCell);
+
+                    const boxNumberCell = document.createElement('td');
+                    boxNumberCell.textContent = item['Box Number'];
+                    row.appendChild(boxNumberCell);
+
+                    const weightCell = document.createElement('td');
+                    weightCell.textContent = item.Weight;
+                    row.appendChild(weightCell);
+
+                    const temperatureCell = document.createElement('td');
+                    temperatureCell.textContent = item.Temperature;
+                    row.appendChild(temperatureCell);
+
+                    const humidityCell = document.createElement('td');
+                    humidityCell.textContent = item.Humidity;
+                    row.appendChild(humidityCell);
+
+                    const audioFileIdCell = document.createElement('td');
+                    audioFileIdCell.textContent = item.audio_file_id;
+                    row.appendChild(audioFileIdCell);
+
+                    const predictionCell = document.createElement('td');
+                    predictionCell.textContent = item.prediction || 'N/A';
+                    row.appendChild(predictionCell);
+
+                    const zeroPredictionCell  = document.createElement('td');
+                    zeroPredictionCell.textContent = result.zero_predictions_count;
+                    row.appendChild(zeroPredictionCell);
+
+                    // Append the row to the table body
+                    tableBody.appendChild(row);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);  // Correctly catching and logging the error
+            });
+    </script>
+</body>
+</html>
